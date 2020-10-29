@@ -222,6 +222,7 @@ Makefile: ../03_SignalAndSlot/03_SignalAndSlot.pro E:/App/Qt/5.14.2/mingw73_32/m
 		E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/qt_config.prf \
 		E:/App/Qt/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf \
 		E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf \
 		E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/toolchain.prf \
 		E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/default_pre.prf \
@@ -250,7 +251,6 @@ Makefile: ../03_SignalAndSlot/03_SignalAndSlot.pro E:/App/Qt/5.14.2/mingw73_32/m
 		E:/App/Qt/5.14.2/mingw73_32/lib/Qt5Gui.prl \
 		E:/App/Qt/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		E:/App/Qt/5.14.2/mingw73_32/lib/qtmain.prl \
-		.qmake.stash \
 		E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\03_SignalAndSlot\03_SignalAndSlot.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/spec_pre.prf:
@@ -405,6 +405,7 @@ E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/qt_functions.prf:
 E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/qt_config.prf:
 E:/App/Qt/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf:
 E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf:
 E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/toolchain.prf:
 E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/default_pre.prf:
@@ -433,7 +434,6 @@ E:/App/Qt/5.14.2/mingw73_32/lib/Qt5Widgets.prl:
 E:/App/Qt/5.14.2/mingw73_32/lib/Qt5Gui.prl:
 E:/App/Qt/5.14.2/mingw73_32/lib/Qt5Core.prl:
 E:/App/Qt/5.14.2/mingw73_32/lib/qtmain.prl:
-.qmake.stash:
 E:/App/Qt/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\03_SignalAndSlot\03_SignalAndSlot.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

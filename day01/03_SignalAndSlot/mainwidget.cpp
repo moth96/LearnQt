@@ -27,11 +27,44 @@ MainWidget::MainWidget(QWidget *parent)
 
     //信号：短信
     //槽函数：接收短信的手机
+
+    setWindowTitle("老大");
+
+    b3.setParent(this);
+    b3.setText("切换到子窗口");
+    b3.move(50,50);
+
+    //显示子窗口
+    //w.show();
+
+    connect(&b3, &QPushButton::released, this, &MainWidget::changeWin);
+
+    //处理子窗口的信号
+    connect(&w, &SubWidght::mySignal, this, &MainWidget::dealSub);
+
+    //设置窗口大小
+    resize(400,300);
 }
 
 void MainWidget::MySlot()
 {
     b2->setText("123");
+}
+
+void MainWidget::changeWin()
+{
+    //子窗口显示
+    w.show();
+    //本窗口隐藏
+    this->hide();
+}
+
+void MainWidget::dealSub()
+{
+    //子窗口隐藏
+    w.hide();
+    //本窗口显示
+    this->show();
 }
 
 MainWidget::~MainWidget()
