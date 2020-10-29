@@ -65,10 +65,14 @@ MainWidget::MainWidget(QWidget *parent)
     b4->setText("Lambda表达式");
     b4->move(150,150);
 
-    connect(b4, &QPushButton::released,
-            []()
+    connect(b4, &QPushButton::clicked,
+            // = : 把外部所有局部变量、类中所有成员以值的方式传递
+            // 只读方式
+            // 加mutable 可改外部参数
+            // & : 把外部所有局部变量, 引用符号
+            [=](bool isCheck)
             {
-                qDebug() << "111111";
+                qDebug() << isCheck;
             });
 
     //设置窗口大小
