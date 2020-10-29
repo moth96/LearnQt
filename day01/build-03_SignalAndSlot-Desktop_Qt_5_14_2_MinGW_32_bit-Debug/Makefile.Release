@@ -587,7 +587,8 @@ release/mainwidget.o: ../03_SignalAndSlot/mainwidget.cpp ../03_SignalAndSlot/mai
 		E:/App/Qt/5.14.2/mingw73_32/include/QtWidgets/qpushbutton.h \
 		E:/App/Qt/5.14.2/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		E:/App/Qt/5.14.2/mingw73_32/include/QtGui/qicon.h \
-		../03_SignalAndSlot/subwidght.h
+		../03_SignalAndSlot/subwidght.h \
+		E:/App/Qt/5.14.2/mingw73_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwidget.o ..\03_SignalAndSlot\mainwidget.cpp
 
 release/subwidght.o: ../03_SignalAndSlot/subwidght.cpp ../03_SignalAndSlot/subwidght.h \

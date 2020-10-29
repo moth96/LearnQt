@@ -14,4 +14,5 @@ SubWidght::SubWidght(QWidget *parent) : QWidget(parent)
 void SubWidght::sendSlot()
 {
     emit mySignal();
+    emit mySignal(250,"我是子窗口");
 }

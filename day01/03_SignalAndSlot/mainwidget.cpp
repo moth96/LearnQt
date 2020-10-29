@@ -1,5 +1,6 @@
 #include "mainwidget.h"
 #include <QPushButton>
+#include <QDebug>   //打印
 
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
@@ -40,10 +41,43 @@ MainWidget::MainWidget(QWidget *parent)
     connect(&b3, &QPushButton::released, this, &MainWidget::changeWin);
 
     //处理子窗口的信号
-    connect(&w, &SubWidght::mySignal, this, &MainWidget::dealSub);
+    //函数指针解决二义性
+    void (SubWidght::*funSignal)() = &SubWidght::mySignal;
+    connect(&w, funSignal, this, &MainWidget::dealSub);
+
+    void (SubWidght::*testSignal)(int, QString) = &SubWidght::mySignal;
+    connect(&w, testSignal, this, &MainWidget::dealSlot);
+
+    //Qt4信号连接
+    //Qt4槽函数必须有slots关键字来修饰
+    //connect(&w, SIGNAL(mySignal()), this, SLOT(dealSub()));
+
+    //connect(&w, SIGNAL(mySignal(int, QString)), this, SLOT(dealSlot(int, QString)));
+
+    // SIGNAL SLOT 将函数名字 -> 字符串, 不进行错误检测
+    // 尽量不用
+
+    //Lambda表达式, 匿名函数对象
+    //C++11增加的新特性, 项目文件: CONFIG += C++11
+    //Qt配合信号一起使用, 非常方便
+
+    QPushButton *b4 = new QPushButton(this);
+    b4->setText("Lambda表达式");
+    b4->move(150,150);
+
+    connect(b4, &QPushButton::released,
+            []()
+            {
+                qDebug() << "111111";
+            });
 
     //设置窗口大小
     resize(400,300);
+}
+
+void MainWidget::dealSlot(int a, QString str)
+{
+    qDebug() << a << str;
 }
 
 void MainWidget::MySlot()
