@@ -9,4 +9,6 @@
    * 04_QtPosition 位置与大小设置
    * 05_QMainWindows 菜单栏与工具栏
    * 06_Dialog 模态与非模态对话框
+* day02
+   * 01_Parts QtUI界面
 
